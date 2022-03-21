@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out</title>
+    <link rel="icon"
+        href="https://res.cloudinary.com/ankitcloudinary/image/upload/v1647805630/lights%20out/lights_out_dy8jhj.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/home.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="left">
+            <div class="logo">
+                <h1 class="brand"><a href="/">Lights Out</a></h1>
+            </div>
+            <div class="nav-item">
+                <a href="/all-players">All Players</a>
+            </div>
+        </div>
+        <div class="right">
+            <% if(!currUser) { %>
+                <a href="/login">
+                    <button class="btn">Login/Signup</button>
+                </a>
+                <% }else { %>
+                    <a href="/logout">
+                        <button class="btn">Logout</button>
+                    </a>
+                    <% } %>
+        </div>
+    </div>
+
+    <div class="first">
+        <div class="first-container">
+            <span style="color: rgb(21, 255, 0); font-size: 1.5em; text-align: center;">
+                <%= messages %>
+            </span>
+            <h1 class="bigger-lights-out">Lights Out</h1>
+            <p class="game-desc">Lights Out game
+                consists of a 5 by 5
+                grid of lights. When the game starts, a random number or a stored pattern of these lights is switched
+                on. Pressing any of the lights will toggle it and the adjacent lights. The goal of the puzzle is to
+                switch all the lights off, preferably in as few button presses as possible.</p>
+            <a class="go-to-instructions" href="#instructions-div">
+                <button class="btn">Read instructions to start playing</button>
+            </a>
+        </div>
+    </div>
+
+    <div id="instructions-div" class="second">
+        <h1 class="instructions-heading">Game Instructions</h1>
+        <div class="all-instructs">
+            <div class="each-instruct">1. As the name suggests("Lights out"), you have to turn all the lights off.</div>
+            <div class="each-instruct">2. Initially some of the lights will be turned 'ON'.</div>
+            <div class="each-instruct">3. On clicking any box with lights 'ON' will turn it 'OFF' and vice versa.</div>
+            <div class="each-instruct">4. But clicking on any box will toggle the adjacent boxes, so if any
+                adjacent(top, bottom, left, right)
+                box if 'ON' then it will be turned 'OFF' and vice versa.</div>
+            <div class="each-instruct">5. Try to win the game with least no. of moves.</div>
+            <div class="each-instruct">6. Hint: Try solving from top row to bottom row first :), so that the board is
+                left with lights 'ON'
+                boxes at the last row.</div>
+            <div class="each-instruct">7. PS : Every time u refresh the page you have to start again, so try not to.
+            </div>
+        </div>
+        <a class="start-play-btn" href="/playground">
+            <button class="btn">Start Playing</button>
+        </a>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div>Lights Out | All rights reserved</div>
+    </footer>
+</body>
+
+</html>

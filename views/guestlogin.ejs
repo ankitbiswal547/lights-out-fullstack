@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+    <link rel="icon"
+        href="https://res.cloudinary.com/ankitcloudinary/image/upload/v1647805630/lights%20out/lights_out_dy8jhj.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/playground.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="lights-out-heading">Playground</h1>
+        <div class="game-container">
+            <div class="grid">
+                <div class="cell" onclick="myfunction(1, 1)" id="1-1"></div>
+                <div class="cell" onclick="myfunction(1, 2)" id="1-2"></div>
+                <div class="cell" onclick="myfunction(1, 3)" id="1-3"></div>
+                <div class="cell" onclick="myfunction(1, 4)" id="1-4"></div>
+                <div class="cell" onclick="myfunction(1, 5)" id="1-5"></div>
+                <div class="cell" onclick="myfunction(2, 1)" id="2-1"></div>
+                <div class="cell" onclick="myfunction(2, 2)" id="2-2"></div>
+                <div class="cell" onclick="myfunction(2, 3)" id="2-3"></div>
+                <div class="cell" onclick="myfunction(2, 4)" id="2-4"></div>
+                <div class="cell" onclick="myfunction(2, 5)" id="2-5"></div>
+                <div class="cell" onclick="myfunction(3, 1)" id="3-1"></div>
+                <div class="cell" onclick="myfunction(3, 2)" id="3-2"></div>
+                <div class="cell" onclick="myfunction(3, 3)" id="3-3"></div>
+                <div class="cell" onclick="myfunction(3, 4)" id="3-4"></div>
+                <div class="cell" onclick="myfunction(3, 5)" id="3-5"></div>
+                <div class="cell" onclick="myfunction(4, 1)" id="4-1"></div>
+                <div class="cell" onclick="myfunction(4, 2)" id="4-2"></div>
+                <div class="cell" onclick="myfunction(4, 3)" id="4-3"></div>
+                <div class="cell" onclick="myfunction(4, 4)" id="4-4"></div>
+                <div class="cell" onclick="myfunction(4, 5)" id="4-5"></div>
+                <div class="cell" onclick="myfunction(5, 1)" id="5-1"></div>
+                <div class="cell" onclick="myfunction(5, 2)" id="5-2"></div>
+                <div class="cell" onclick="myfunction(5, 3)" id="5-3"></div>
+                <div class="cell" onclick="myfunction(5, 4)" id="5-4"></div>
+                <div class="cell" onclick="myfunction(5, 5)" id="5-5"></div>
+            </div>
+        </div>
+
+        <div class="counter-sec">
+            <span id="counter-div">0</span>
+        </div>
+
+        <div>
+            <a href="/">
+                <button class="btn">Exit Playground</button>
+            </a>
+            <button class="btn" onclick="restartGame()">New Game</button>
+        </div>
+    </div>
+
+    <script src="js/guestlogin.js"></script>
+</body>
+
+</html>

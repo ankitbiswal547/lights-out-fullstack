@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon"
+        href="https://res.cloudinary.com/ankitcloudinary/image/upload/v1647805630/lights%20out/lights_out_dy8jhj.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/signup.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="left">
+            <div class="logo">
+                <h1 class="brand"><a href="/">Lights Out</a></h1>
+            </div>
+            <div class="nav-item">
+                <a href="/all-players">All Players</a>
+            </div>
+        </div>
+        <div class="right">
+            <% if(!currUser) { %>
+                <a href="/signup">
+                    <button class="btn">Signup</button>
+                </a>
+                <% }else { %>
+                    <a href="/logout">
+                        <button class="btn">Logout</button>
+                    </a>
+                    <% } %>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <span style="color: blue; font-size: 1.5em;">
+            <%= messages %>
+        </span>
+        <h1 class="login-heading">Login to your account</h1>
+        <form action="/login" method="post">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button class="btn">Login to your account</button>
+        </form>
+
+        <div class="guest-sec">
+            <div class="guess-question">Wanna play as a guest user ?</div>
+            <a class="guest-btn-sec" href="/guest-user">
+                <button class="btn">Play as a guest</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <div>Lights Out | All rights reserved</div>
+    </footer>
+</body>
+
+</html>

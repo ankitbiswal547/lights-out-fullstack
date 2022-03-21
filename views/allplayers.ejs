@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Players</title>
+    <link rel="icon"
+        href="https://res.cloudinary.com/ankitcloudinary/image/upload/v1647805630/lights%20out/lights_out_dy8jhj.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/home.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="left">
+            <div class="logo">
+                <h1 class="brand"><a href="/">Lights Out</a></h1>
+            </div>
+            <div class="nav-item">
+                <a href="/all-players">All Players</a>
+            </div>
+        </div>
+        <div class="right">
+            <% if(!currUser) { %>
+                <a href="/login">
+                    <button class="btn">Login/Signup</button>
+                </a>
+                <% }else { %>
+                    <a href="/logout">
+                        <button class="btn">Logout</button>
+                    </a>
+                    <% } %>
+        </div>
+    </div>
+
+
+    <% if(currUser){ %>
+        <div class="your-profile">
+            <h1 class="allplayers-heading">My Profile</h1>
+            <div class="each-player">
+                <img src="<%= currUser.image %>" width="50" height="50" alt="">
+                <div class="player-name">
+                    <%= currUser.fullname %>
+                </div>
+                <div class="player-level">(<%= currUser.level %>)</div>
+                <div class="points-earned">Points Earned - <%= currUser.totalPoints %>
+                </div>
+                <div class="matches-played">Matches Played - <%= currUser.matchesCompleted %>
+                </div>
+                <div class="average-points">Average Points - <%= currUser.averagePoints %>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+
+            <div class="third <%= (!currUser) ? " third-active":""%> ">
+                <h1 class="allplayers-heading">Players</h1>
+                <div class="all-players-sec">
+                    <% for(let i=0; i < users.length; i++) {%>
+                        <div class="each-player">
+                            <img src="<%= users[i].image %>" width="50" height="50" alt="">
+                            <div class="player-name">
+                                <%= users[i].fullname %>
+                            </div>
+                            <div class="player-level">(<%= users[i].level %>)</div>
+                            <div class="points-earned">Points Earned - <%= users[i].totalPoints %>
+                            </div>
+                            <div class="matches-played">Matches Played - <%= users[i].matchesCompleted %>
+                            </div>
+                            <div class="average-points">Average Points - <%= users[i].averagePoints %>
+                            </div>
+                        </div>
+                        <% } %>
+
+                </div>
+            </div>
+
+            <!-- footer -->
+            <footer>
+                <div>Lights Out | All rights reserved</div>
+            </footer>
+</body>
+
+</html>
