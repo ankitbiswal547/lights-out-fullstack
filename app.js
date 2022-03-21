@@ -10,6 +10,8 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 const flash = require("connect-flash");
+const session = require("express-session");
+const MongoDBStore = require('connect-mongo')(session);
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/lightsout';
 // 
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -25,7 +27,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/public')));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, '/views'));
-app.use(require("express-session")({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+
+const store = new MongoDBStore({
+    url: dbUrl,
+    secret: "keyboard dog",
+    touchAfter: 24 * 60 * 60
+})
+
+store.on("error", function (e) {
+    console.log(e);
+})
+
+const sessionConfig = { store, secret: 'keyboard dog', resave: true, saveUninitialized: true };
+app.use(session(sessionConfig));
 app.use(flash());
 
 app.use(passport.initialize());
