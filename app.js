@@ -94,10 +94,10 @@ app.post('/signup', async (req, res) => {
         const registeredUser = await User.register(user, password);
         req.login(registeredUser, (err) => {
             if (err) {
+                // req.flash('info', "You must be signed in to play");
                 return res.redirect('/');
             }
         })
-        req.flash('info', "You must be signed in to play");
         return res.redirect('/');
     } catch (e) {
         req.flash('info', e.message);
