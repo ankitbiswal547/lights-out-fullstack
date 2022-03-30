@@ -33,6 +33,8 @@ const myfunction = (row, col) => {
     }
 
     if (gameWon()) {
+        document.querySelector(".container").style.display = "none";
+        document.querySelector(".loader").style.display = "flex";
         calcPoints(counter, minMoves);
         window.location = `/youwon`;
         points = 0;
