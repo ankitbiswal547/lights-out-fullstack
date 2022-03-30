@@ -33,9 +33,12 @@ const myfunction = (row, col) => {
     }
 
     if (gameWon()) {
+        document.querySelector(".container").style.display = "none";
+        document.querySelector(".loader").style.display = "flex";
+
         calcPoints(counter, minMoves);
-        console.log(`you won in ${counter} moves. Where as the minimum moves required to finish the game was ${minMoves}.`);
-        console.log(`points earned - ${points}`);
+        // console.log(`you won in ${counter} moves. Where as the minimum moves required to finish the game was ${minMoves}.`);
+        // console.log(`points earned - ${points}`);
 
         const url = "/gamewon";
         const user = {
