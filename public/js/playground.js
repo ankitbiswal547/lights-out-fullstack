@@ -54,7 +54,7 @@ const myfunction = (row, col) => {
         })
             .then(function (response) {
                 if (response.data.redirect == '/youwon') {
-                    window.location = "/youwon"
+                    window.location = `/youwon?points=${response.data.points}&moves=${response.data.moves}`;
                 } else if (response.data.redirect == '/login') {
                     window.location = "/login"
                 }

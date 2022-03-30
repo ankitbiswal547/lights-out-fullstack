@@ -38,6 +38,38 @@ body {
     font-size: 4em;
 }
 
+.you-won-points {
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+}
+
+.you-won-moves{
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+}
+
+.you-won-user-profile {
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+.you-won-create-account {
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+
+.you-won-user-profile a, .you-won-create-account a{
+    background: -webkit-linear-gradient(45deg, #c73461, #f83730, #fc924c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: underline !important;
+}
+
 @media(max-width: 1025px) {
     .error-heading {
         font-size: 10em;

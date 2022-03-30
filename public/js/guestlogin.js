@@ -34,9 +34,9 @@ const myfunction = (row, col) => {
 
     if (gameWon()) {
         calcPoints(counter, minMoves);
+        window.location = `/youwon`;
         points = 0;
         counter = 0;
-        window.location = "/youwon";
     }
 }
 

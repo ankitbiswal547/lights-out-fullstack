@@ -22,10 +22,39 @@
 
     <div class="error-container">
         <h1 class="error-heading">You Won</h1>
-        <a class="start-play-btn" href="/playground">
-            <button class="btn">Play Again?</button>
-        </a>
-        <!-- <div class="error-message">Page Not Found</div> -->
+        <% if(currUser) { %>
+            <div class="you-won-points">
+                Points Earned - <%= points %>
+            </div>
+            <div class="you-won-moves">
+                Total Moves - <%= moves %>
+            </div>
+
+            <div class="you-won-user-profile">Check out your <a href="/all-players">Profile</a></div>
+
+            <div>
+                <a class="start-play-btn" href="/">
+                    <button class="btn">Home</button>
+                </a>
+                <a class="start-play-btn" href="/playground">
+                    <button class="btn">Play Again?</button>
+                </a>
+            </div>
+            <% }else{ %>
+                <div class="you-won-create-account">To get yourself into the scoreboard and become a legend of the game,
+                    <a href="/signup">Creat an
+                        account here</a>
+                </div>
+                <div>
+                    <a class="start-play-btn" href="/">
+                        <button class="btn">Home</button>
+                    </a>
+                    <a class="start-play-btn" href="/guest-user">
+                        <button class="btn">Play Again?</button>
+                    </a>
+                </div>
+                <% } %>
+                    <!-- <div class="error-message">Page Not Found</div> -->
     </div>
 
 </body>

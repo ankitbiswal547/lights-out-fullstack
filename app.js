@@ -128,7 +128,9 @@ app.get('/logout', (req, res) => {
 })
 
 app.get("/youwon", (req, res) => {
-    res.render("youwon");
+    let { moves, points } = req.query;
+    // console.log(moves, points);
+    res.render("youwon", { moves, points });
 })
 
 app.post("/gamewon", async (req, res) => {
@@ -150,7 +152,7 @@ app.post("/gamewon", async (req, res) => {
     else if (user.totalPoints > 900) user.level = "Expert";
 
     const savedUser = await user.save();
-    const redir = { redirect: "/youwon" };
+    const redir = { redirect: "/youwon", moves: req.body.user.counter, points: req.body.user.points };
     return res.json(redir);
 })
 

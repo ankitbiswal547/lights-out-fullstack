@@ -38,6 +38,8 @@ a:hover {
     padding: 1em 5em;
     position: absolute;
     top: 0;
+    text-align: center;
+    background: #161616;
 }
 
 .left {
